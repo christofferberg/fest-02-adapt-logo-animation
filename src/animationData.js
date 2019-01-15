@@ -4,7 +4,7 @@ import LetterA2 from 'assets/icons/letter-a-2.svg';
 import LetterP from 'assets/icons/letter-p.svg';
 import LetterT from 'assets/icons/letter-t.svg';
 
-const letters = [
+const animationLetters = [
   {
     'id': '01',
     'title': 'Letter A',
@@ -32,4 +32,4 @@ const letters = [
   },
 ];
 
-export default letters;
+export default animationLetters;

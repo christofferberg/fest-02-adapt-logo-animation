@@ -4,17 +4,37 @@ import React, { Component } from 'react';
 import './animation.scss';
 
 // assets
-import letters from '../../../animationData';
+import animationLetters from '../../../animationData';
 
 class Animation extends Component {
   render() {
+    const animIntroClass = 'anim-intro';
+    const animOutroClass = 'anim-outro';
+
+    const startAnimation = () => {
+      console.log('start animation');
+      const letters = document.querySelector('.letters');
+      letters.classList.add(animIntroClass);
+
+      setTimeout(() => {
+        letters.classList.add(animOutroClass);
+        letters.classList.remove(animIntroClass);
+      }, 1000);
+    };
+
+    const clearAnimation = () => {
+      console.log('stop animation');
+      const letters = document.querySelector('.letters');
+      letters.classList.remove(animIntroClass, animOutroClass);
+    };
+
     return (
-      <div className="animation">
-        <div className="animation__letters">
-          {letters.map(letter => {
+      <div className="adapt-animation">
+        <div className="letters">
+          {animationLetters.map(letter => {
             return (
               <img
-                className="animation__letter"
+                className="letters__item"
                 key={letter.id}
                 src={letter.iconPath}
                 alt={letter.title}
@@ -23,6 +43,23 @@ class Animation extends Component {
           })}
         </div>
 
+        <div className="buttons">
+          <button
+            onClick={startAnimation}
+            type="button"
+            className="button button--start"
+          >
+            Start
+          </button>
+
+          <button
+            onClick={clearAnimation}
+            type="button"
+            className="button button--start"
+          >
+            Clear
+          </button>
+        </div>
       </div>
     );
   }

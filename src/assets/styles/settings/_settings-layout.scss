@@ -13,6 +13,8 @@ $ts-easing:     ease;
 $ts-timing:     0.3;
 $ts-base:       #{$ts-timing}s $ts-easing;
 $ts-quick:      #{$ts-timing/2}s $ts-easing;
+$ts-medium:     #{$ts-timing/1.5}s $ts-easing;
+$ts-slow:       #{$ts-timing*2}s $ts-easing;
 
 // Breakpoints
 $small:         420px;
