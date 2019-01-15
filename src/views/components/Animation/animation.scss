@@ -11,18 +11,20 @@
   margin-bottom: $l-leading*3;
 
   &__item {
-    $letterIntroTranslate: 40px;
+    $letterIntroTranslate: 70px;
     $letterOutroTranslate: -100px;
+    $letterTransitionDelay: 0.07s;
     width: 100px;
     height: auto;
     opacity: 0;
     margin: 0 3px;
     transform: translateY($letterIntroTranslate);
-    transition: opacity $ts-medium, transform $ts-medium;
+    transition: opacity $ts-base, transform $ts-base;
+    pointer-events: none;
 
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        transition-delay: $i * 0.08s;
+        transition-delay: $i * $letterTransitionDelay;
       }
     }
 
@@ -38,7 +40,7 @@
 
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
-          transition-delay: $i * 0.08s;
+          transition-delay: $i * $letterTransitionDelay;
         }
       }
     }
