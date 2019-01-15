@@ -1,0 +1,21 @@
+// Body
+body {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $c-black;
+}
+
+// Media
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+main {
+  @include inner($l-gutter 1000px);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

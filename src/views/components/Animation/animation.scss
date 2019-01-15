@@ -1,0 +1,11 @@
+.animation {
+  &__letters {
+    width: 100%;
+    display: flex;
+  }
+
+  &__letter {
+    height: 50px;
+    width: auto;
+  }
+}
