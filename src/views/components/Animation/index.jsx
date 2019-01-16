@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 // styles
-import './animation.scss';
+// import './animation.scss';
+import './donimation.scss';
 
 // assets
+import Outline from './Outline';
 import animationLetters from '../../../animationData';
 
 class Animation extends Component {
@@ -30,19 +32,24 @@ class Animation extends Component {
 
     return (
       <div className="adapt-animation">
-        <div className="letters">
-          {animationLetters.map(letter => {
-            return (
-              <img
-                className="letters__item"
-                key={letter.id}
-                src={letter.iconPath}
-                alt={letter.title}
-              />
-            );
-          })}
-        </div>
 
+        <div className="logo">
+          <div className="outline">
+            <Outline></Outline>
+          </div>
+          <div className="letters">
+            {animationLetters.map(letter => {
+              return (
+                <img
+                  className="letters__item"
+                  key={letter.id}
+                  src={letter.iconPath}
+                  alt={letter.title}
+                />
+              );
+            })}
+          </div>
+        </div>
         <div className="buttons">
           <button
             onClick={startAnimation}

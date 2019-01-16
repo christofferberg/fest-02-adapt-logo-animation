@@ -1,0 +1,133 @@
+$logo_size: 540px;
+$letterD_initial_postion: -20px;
+$letterP_initial_postion: 12px;
+$letterT_initial_postion: -20px;
+
+$letterIntroTranslate: 70px;
+$letterOutroTranslate: -100px;
+$letterTransitionDelay: 0.07s;
+
+.adapt-animation {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: $logo_size;
+    height: $logo_size;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: $l-leading*3;
+}
+
+.outline {
+    width: 540px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    path {
+        stroke: white;
+        stroke-width: 12;
+        stroke-dasharray: 20064;
+        stroke-dashoffset: 20064;
+        animation: dash 3s linear forwards;
+        animation-delay: 1s;
+    }
+}
+
+.letters {
+    $letters: &;
+    display: flex;
+
+    &__item {
+        width: 100px;
+        height: auto;
+        width: 100px;
+        height: auto;
+        margin: 0 3px;
+        opacity: 0;
+        pointer-events: none;
+        animation: fadeInUp 4s infinite;
+        position: relative;
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                 animation-delay: 2s + ($i * $letterTransitionDelay);
+            }
+        }
+
+        // letter D
+        &:nth-child(2) {
+            top: $letterD_initial_postion;
+        }
+
+        // letter P
+        &:nth-child(4) {
+            top: $letterP_initial_postion;
+        }
+
+        // letter T
+        &:nth-child(5) {
+            width: 60px;
+            top: $letterT_initial_postion;
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+
+    .button {
+        margin: 0 $l-leading*0.5;
+        border: none;
+        color: $c-black;
+        background-color: $c-white;
+        padding: 10px 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: background-color $ts-quick, color $ts-quick;
+        outline: none;
+
+        &:hover {
+            background-color: #0DA8BF;
+            color: $c-white;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: darken(#0DA8BF, 10%);
+        }
+    }
+}
+
+@keyframes fadeInUp {
+
+    0%, 20% {
+        opacity: 0;
+        transform: translateY($letterIntroTranslate);
+    }
+
+    20%, 70% {
+        opacity: 1;
+        transform: translateY(0);}
+
+    100% {
+        opacity: 0;
+        transform: translateY($letterOutroTranslate);
+    }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
