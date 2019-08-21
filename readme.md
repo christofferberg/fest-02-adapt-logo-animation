@@ -1,7 +1,7 @@
 # FEST challenge 02
 Animate the Adapt logo
 
-> [Demo](https://02-adapt-logo-animation.christofferberg.now.sh)
+> [Demo](https://adapt-logo-animation.christofferberg.now.sh)
 
 ## Build Setup
 
