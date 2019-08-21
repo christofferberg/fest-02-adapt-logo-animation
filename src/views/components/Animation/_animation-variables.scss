@@ -1,0 +1,15 @@
+$animationMaxWidth: 500px;
+
+$letterItems: 5;
+$letterD-initialPosition: -12px;
+$letterP-initialPosition: 12px;
+$letterT-initialPosition: -12px;
+
+$letterIntroTranslate: 100px;
+$letterOutroTranslate: -100px;
+$letterTransitionDelay: 0.07s;
+
+$animationDuration: 4s;
+
+$boxInitialSize: $animationMaxWidth * 0.3;
+$boxMaximumSize: $animationMaxWidth * 0.80;

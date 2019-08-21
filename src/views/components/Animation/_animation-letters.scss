@@ -1,0 +1,43 @@
+.letters {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 175px);
+
+  &__item {
+    position: relative;
+    width: calc(100% / #{$letterItems});
+    height: auto;
+    opacity: 0;
+    //opacity: 1;
+    margin: 0 3px;
+    pointer-events: none;
+
+    .anim-start & {
+      animation: letterFade $animationDuration;
+    }
+
+    @for $i from 1 through $letterItems {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * $letterTransitionDelay;
+      }
+    }
+
+    // letter D
+    &:nth-child(2) {
+      top: $letterD-initialPosition;
+    }
+
+    // letter P
+    &:nth-child(4) {
+      top: $letterP-initialPosition;
+    }
+
+    // letter T
+    &:nth-child(5) {
+      width: calc((100% / 5) - 25px);
+      top: $letterT-initialPosition;
+    }
+  }
+}

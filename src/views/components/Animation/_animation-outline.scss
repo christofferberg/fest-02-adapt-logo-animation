@@ -1,0 +1,15 @@
+.outline {
+  width: 100%;
+  pointer-events: none;
+
+  path {
+    stroke: white;
+    stroke-width: 15;
+    stroke-dasharray: 20000;
+    stroke-dashoffset: 20000;
+
+    .anim-start & {
+      animation: dash $animationDuration ease alternate .06s;
+    }
+  }
+}

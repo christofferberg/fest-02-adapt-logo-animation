@@ -1,0 +1,31 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+
+  .button {
+    margin: 0 $l-leading*0.5;
+    border: none;
+    color: $c-black;
+    background-color: $c-white;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color $ts-quick, color $ts-quick;
+    outline: none;
+
+    &:hover {
+      background-color: #0DA8BF;
+      color: $c-white;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: darken(#0DA8BF, 10%);
+    }
+  }
+}
